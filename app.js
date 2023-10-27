@@ -10,14 +10,10 @@ app.listen(8080, function () {
   console.log("Server running")
 });
 
-app.get("/user", function (req, res) {
+app.get("/user/:name/secondName/:secondName", function (req, res) {
   res.send({
-    nome: "Davi"
+    name: req.params.name,
+    secondName: req.params.secondName
   })
 });
 
-app.delete("/user", function (req, res) {
-  res.send({
-    nome: "o usuário: Davi foi deletado"
-  })
-})
